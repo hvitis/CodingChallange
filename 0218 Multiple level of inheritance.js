@@ -1,4 +1,4 @@
-///////////////////////////////////
+////////////////////////////////////
 // Multiple level of inheritance
 // all the code works on:
 // http://plnkr.co/edit/J81EK3TWFof0ekhEnyiJ?p=preview
