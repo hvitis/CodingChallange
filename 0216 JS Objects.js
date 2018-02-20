@@ -1,4 +1,4 @@
-// Objekty
+// Objekty //
 
 'use strict';
 
