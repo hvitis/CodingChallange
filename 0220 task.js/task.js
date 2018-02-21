@@ -1,7 +1,11 @@
-var Task = function(name){
-    this.name = name;
-    this.completed = false;
+var Repo = require("C:\\Users\\adam.piskorek\\Documents\\JS\\CodingYear\\0220 task.js\\taskRepository.js")
 
+//data is a JSON object
+var Task = function(data){
+    this.name = data.name;
+    this.completed = false;
+}
+/*
     this.complete = function(){
         console.log("Completing task: " + this.name);
         this.completed = true;
@@ -10,6 +14,8 @@ var Task = function(name){
         console.log("saving Task: " + this.name);   
     }
 }
+
+*/
 /* How to do that - a template:
 ClassnName.prototype.methodName = function (arguments){};
 */
@@ -26,6 +32,7 @@ Task.prototype.complete = function (){
 
 Task.prototype.save = function (){
     console.log("saving Task: " + this.name); 
+    Repo.save(this);
 };
 
 module.exports = Task;
