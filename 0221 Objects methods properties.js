@@ -1,4 +1,4 @@
-
+// from the book
 // Properties that contain functions are generally called methods of the
 // value they belong to.
 var mack = [];
