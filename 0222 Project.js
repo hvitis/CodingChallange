@@ -132,4 +132,4 @@ function tableFor(event, journal) {
     return table;
 }
 
-// TBC
+// 
