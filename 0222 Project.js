@@ -1,5 +1,5 @@
 
-var JOURNAL = [
+var journal = [
     {"events":["carrot","exercise","weekend"],"squirrel":false},
     {"events":["bread","pudding","brushed teeth","weekend","touched tree"],"squirrel":false},
     {"events":["carrot","nachos","brushed teeth","cycling","weekend"],"squirrel":false},
@@ -103,23 +103,20 @@ addEntry(["work", "touched tree", "pizza", "running", "television"], false);
 addEntry(["work", "ice cream", "cauliflower", "lasagna", "touched tree", "brushed teeth"], false);
 addEntry(["weekend", "cycling", "break", "peanuts", "beer"], true);
 
-
-console.log(journal)
-
-
 function phi(table) {
     return (table[3]*table[0]-table[2]*table[1]) /
     Math.sqrt(
         (table[2] + table[3]) *
         (table[0] + table[1]) *
         (table[1] + table[3]) *
-        (table[0] + table[2])); 
+        (table[0] + table[2]));
+
 }
-console.log(phi([76, 9, 4, 1]))
 
 function hasEvent(event, entry) {
-    return entry.events.indexOf (event) != -1;
+    return entry.events.indexOf(event) != -1;
 }
+
 
 function tableFor(event, journal) {
     var table = [0,0,0,0];
@@ -127,9 +124,10 @@ function tableFor(event, journal) {
         var entry = journal[i], index = 0;
         if (hasEvent(event, entry)) index += 1;
         if (entry.squirrel) index += 2;
-        table[index] += 1,
+        table[index] += 1;
     }
     return table;
 }
-
-// 
+var zmienna = "lasagna";
+console.log(tableFor(zmienna, journal))
+console.log(phi(tableFor(zmienna, journal)))
