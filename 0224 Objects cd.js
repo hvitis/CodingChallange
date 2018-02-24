@@ -12,7 +12,7 @@ function urgentlyRememberTo (task) {
 }
 
 rememberTo('Wash the dishes');
-rememberTo('Wash the dishes 2');
+rememberTo('Take the camera');
 console.log(todoList);
 whatIsNext()
 console.log(todoList);
