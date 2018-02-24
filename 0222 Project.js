@@ -164,8 +164,6 @@ function gatherCorrelations(journal){
     return phis;
 }
 
-// var correlations = gatherCorrelations(journal); 
-//console.log(correlations.pizza);
 function roundUp(num, precision) {
     precision = Math.pow(10, precision)
     return Math.ceil(num * precision) / precision
@@ -176,3 +174,11 @@ function showCorrelation(eventName){
     return console.log(eventName + " has correlation equal to " + roundUp(correlations[eventName], 4))
 }
 showCorrelation("carrot");
+
+var correlations = gatherCorrelations(journal); 
+//console.log(correlations.pizza);
+for (var event in correlations){
+    var correlation = correlations[event];
+    if (correlation > 0.4 || correlation < -0.4)
+        console.log(event + " : " + correlations[event]);
+}
