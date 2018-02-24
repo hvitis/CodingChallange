@@ -128,6 +128,51 @@ function tableFor(event, journal) {
     }
     return table;
 }
+
+/*
 var zmienna = "lasagna";
 console.log(tableFor(zmienna, journal))
 console.log(phi(tableFor(zmienna, journal)))
+*/
+
+var map = {};
+function storePhi (event, phi) {
+    return map[event] = phi;
+}
+/*
+storePhi("pizza", 0.069);
+console.log(map["pizza"]);
+console.log(map["touched tree"]);
+console.log(map)
+*/
+
+function gatherCorrelations(journal){
+    var phis = {};
+    for (var entry = 0; entry < journal.length; entry++) {
+        /*
+        var journal = [
+            {"events":["carrot","exercise","weekend"],"squirrel":false},
+            {"events":["carrot","exercise","weekend"],"squirrel":false},
+        */
+        var events = journal[entry].events;
+        for (var i = 0; i < events.length; i++){
+            var event = events[i];
+            if (!(event in phis))
+                phis[event] = phi(tableFor(event, journal));
+        }
+    }
+    return phis;
+}
+
+// var correlations = gatherCorrelations(journal); 
+//console.log(correlations.pizza);
+function roundUp(num, precision) {
+    precision = Math.pow(10, precision)
+    return Math.ceil(num * precision) / precision
+  }
+
+function showCorrelation(eventName){
+    var correlations = gatherCorrelations(journal); 
+    return console.log(eventName + " has correlation equal to " + roundUp(correlations[eventName], 4))
+}
+showCorrelation("carrot");
