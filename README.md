@@ -7,7 +7,7 @@ Starting on 15th of February 2018
 2. To have fun!
 
 
-# Important phrases notices during learning:
+# Important phrases noticed during learning:
 
 1. There are some named properties in arrays, such as length and a number
 of methods. Methods are functions that live in properties and (usually)
