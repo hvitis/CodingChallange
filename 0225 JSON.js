@@ -56,4 +56,36 @@ var ANCESTRY_FILE = JSON.stringify([
   console.log(ancestry.length);
 
 
-  // TBC Filtering an array
+function filter(array, test) {
+  var passed = [];
+  for (var i = 0; i < array.length; i++) {
+    if (test(array[i]))
+    passed.push(array[i]);
+  }
+  return passed;
+}
+/*
+console.log(filter(ancestry, function(person){
+  return person.born > 1880 && person.died > 2000;
+}));
+*/
+
+var singular = (filter(ancestry, function(person){
+  return person.born > 1880 && person.died > 2000;
+}));
+console.log(singular[0].name)
+
+// Mapping an array
+function map(array, transform) {
+  var mapped = [];
+  for (var i = 0; i < array.length; i++)
+    mapped.push(transform(array[i]));
+    return mapped;
+}
+var overNinety = ancestry.filter(function(person){
+  return person.died - person.born > 90;
+});
+console.log(map(overNinety, function(person) {
+  return person.name;
+}));
+
