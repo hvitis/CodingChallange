@@ -96,6 +96,8 @@ function reduce(array, combine, start) {
       current = combine(current, array[i]);
   return current;
 };
+// in following example we dont pass combine and start
+// because 
 var youngestSex = ancestry.reduce(function(min, cur) {
   if (cur.born < min.born) return cur;
   else return min;
