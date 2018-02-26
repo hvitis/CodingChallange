@@ -89,3 +89,16 @@ console.log(map(overNinety, function(person) {
   return person.name;
 }));
 
+// reduce
+function reduce(array, combine, start) {
+  var current = start;
+  for (var i = 0; i < array.length; i++)
+      current = combine(current, array[i]);
+  return current;
+};
+var youngestSex = ancestry.reduce(function(min, cur) {
+  if (cur.born < min.born) return cur;
+  else return min;
+});
+
+console.log(youngestSex["sex"])
