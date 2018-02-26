@@ -12,3 +12,6 @@ Starting on 15th of February 2018
 1. There are some named properties in arrays, such as length and a number
 of methods. Methods are functions that live in properties and (usually)
 act on the value they are a property of.
+2. (It’s a bit silly that we have to define plus as a function, but operators
+in JavaScript, unlike functions, are not values, so you can’t pass them
+as arguments.)
