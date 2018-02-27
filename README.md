@@ -15,3 +15,11 @@ act on the value they are a property of.
 2. (It’s a bit silly that we have to define plus as a function, but operators
 in JavaScript, unlike functions, are not values, so you can’t pass them
 as arguments.)
+3. Usually a method needs to do something with the object it was called
+on. When a function is called as a method—looked up as a property and
+immediately called, as in object.method()—the special variable this in its
+body will point to the object that it was called on.
+4. In addition to their set of properties,
+almost all objects also have a prototype. A prototype is another object
+that is used as a fallback source of properties.
+5. 
