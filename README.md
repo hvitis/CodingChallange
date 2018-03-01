@@ -22,4 +22,12 @@ body will point to the object that it was called on.
 4. In addition to their set of properties,
 almost all objects also have a prototype. A prototype is another object
 that is used as a fallback source of properties.
-5. 
+5. A more convenient way to create objects that derive from some shared
+prototype is to use a constructor. In JavaScript, calling a function with
+the new keyword in front of it causes it to be treated as a constructor.
+6. When you add a property to an object, whether it is present in the
+prototype or not, the property is added to the object itself, which will
+henceforth have it as its own property. If there is a property by the same
+name in the prototype, this property will no longer affect the object. The
+prototype itself is not changed.
+7. 
