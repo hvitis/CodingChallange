@@ -161,25 +161,6 @@ RTextCell.prototype.draw = function(width, height) {
 };
 console.log(RTextCell.prototype.draw)
 
-
-/*
-function dataTable(data) {
-    var keys = Object.keys(data[0]);
-    var headers = keys.map(function(name) {
-        return new UnderlinedCell(new TextCell(name));
-    });
-    var body = data.map(function(row) {
-        return keys.map(function(name) {
-            return new TextCell(String(row[name]));
-        });
-    });
-    return [headers].concat(body);
-}
-
-console.log(dataTable(MOUNTAINS));
-console.log(drawTable(dataTable(MOUNTAINS)));
-*/
-
 function dataTable(data) {
     var keys = Object.keys(data[0]);
     var headers = keys.map(function(name) {
@@ -189,7 +170,9 @@ function dataTable(data) {
         return keys.map(function(name) {
             var value = row[name];
             var result = null;
-            // This was changed;
+            // This was changed (in the book);
+            // stands for changing the margins depending on the 
+            // type of value, if its a number it sticks to the right
             if (typeof value == "number")
                 result = new RTextCell(String(value));
             else 
