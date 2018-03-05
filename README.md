@@ -48,5 +48,15 @@ to specify a function to be run when the property is read or written.
 this allows us to do something clever.
 10. Commenting my code on the beginning of learning will help me with 
 reading the code later.
-
-// commit settings checking
+11. Important Summary:
+So objects are more complicated than I initially portrayed them. They
+have prototypes, which are other objects, and will act as if they have
+properties they don’t have as long as the prototype has that property.
+Simple objects have Object.prototype as their prototype.
+Constructors, which are functions whose names usually start with a
+capital letter, can be used with the new operator to create new objects.
+The new object’s prototype will be the object found in the prototype
+property of the constructor function. You can make good use of this by
+putting the properties that all values of a given type share into their prototype.
+The instanceof operator can, given an object and a constructor,
+tell you whether that object is an instance of that constructor.

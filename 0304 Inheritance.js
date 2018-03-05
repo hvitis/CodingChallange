@@ -43,4 +43,3 @@ console.log(drawTable(dataTable(MOUNTAINS)));
 /*It is occasionally useful to know whether an object was derived from
 a specific constructor. For this, JavaScript provides a binary operator
 called instanceof.*/
-con

@@ -184,3 +184,10 @@ function dataTable(data) {
 }
 
 console.log(drawTable(dataTable(MOUNTAINS)));
+
+
+// Operator instanceof
+
+console.log(new RTextCell("A") instanceof RTextCell);
+console.log(new RTextCell("A") instanceof TextCell);
+console.log(new TextCell("A") instanceof RTextCell);
