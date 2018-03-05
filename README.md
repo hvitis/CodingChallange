@@ -48,3 +48,5 @@ to specify a function to be run when the property is read or written.
 this allows us to do something clever.
 10. Commenting my code on the beginning of learning will help me with 
 reading the code later.
+
+// commit settings checking
