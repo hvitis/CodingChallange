@@ -6,6 +6,12 @@ Starting on 15th of February 2018
 1. Make at least 1 commit everyday to sum up minimum 1 hour learning effort.
 2. To have fun!
 
+# Interesting links: 
+
+Explaining the book that I started with
+https://github.com/fhdhsni/The-Secret-Life-of-Objects
+
+
 
 # Important phrases noticed during learning:
 
@@ -30,4 +36,7 @@ prototype or not, the property is added to the object itself, which will
 henceforth have it as its own property. If there is a property by the same
 name in the prototype, this property will no longer affect the object. The
 prototype itself is not changed.
-7. 
+7. Using a variable name starting with an underscore (_) or consisting
+entirely of a single underscore is a way to indicate (to human readers)
+that this argument is not going to be used.
+8. 
