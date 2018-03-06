@@ -11,6 +11,9 @@ Starting on 15th of February 2018
 Explaining the book that I started with
 https://github.com/fhdhsni/The-Secret-Life-of-Objects
 
+Interesting chanel on youtube that I did a few video from
+https://www.youtube.com/watch?v=bCqtb-Z5YGQ
+
 
 
 # Important phrases noticed during learning:
@@ -39,4 +42,7 @@ prototype itself is not changed.
 7. Using a variable name starting with an underscore (_) or consisting
 entirely of a single underscore is a way to indicate (to human readers)
 that this argument is not going to be used.
-8. 
+8. In an object literal, the get or set notation for properties allows you
+to specify a function to be run when the property is read or written.
+9. Prototypes may themselves have prototypes, and
+this allows us to do something clever.
