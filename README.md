@@ -62,3 +62,4 @@ The instanceof operator can, given an object and a constructor,
 tell you whether that object is an instance of that constructor.
 12. Methods are simply properties that hold function values. This is a simple
 method.
+13. Remember about the colours! ;
