@@ -1,6 +1,6 @@
 /*
 Methods are simply properties that hold function values. This is a simple
-method:
+method.
 */
 
 var rabbit = {};
