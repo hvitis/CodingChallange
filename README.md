@@ -60,3 +60,5 @@ property of the constructor function. You can make good use of this by
 putting the properties that all values of a given type share into their prototype.
 The instanceof operator can, given an object and a constructor,
 tell you whether that object is an instance of that constructor.
+12. Methods are simply properties that hold function values. This is a simple
+method.
