@@ -63,3 +63,14 @@ tell you whether that object is an instance of that constructor.
 12. Methods are simply properties that hold function values. This is a simple
 method.
 13. Remember about the colours! ;
+14. When a function is created in JavaScript, JavaScript engine adds a prototype property to the function. This prototype property is an object (called as prototype object) has a constructor property by default. constructor property points back to the function on which prototype object is a property. We can access the function’s prototype property using the syntax functionName.prototype.
+15. All objects that inherit from another object also inherit a constructor property. And this constructor property is simply a property (like any variable) that holds or points to the constructor of the object.
+16. Prototype is important in JavaScript because JavaScript does not have classical inheritance based on Classes (as most object oriented languages do), and therefore all inheritance in JavaScript is made possible through the prototype property. 
+17. Some languages provide ways to
+explicitly declare certain methods and properties private and signal an
+error when you try to use them from outside the object. JavaScript does
+not, so you will have to rely on some other form of communication to
+describe what is part of an object’s interface. Sometimes it can help
+to use a naming scheme to distinguish between external and internal
+properties, for example by prefixing all internal ones with an underscore
+character (_).

@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/0222 Project.js"
+            "program": "C:\\Users\\adam.piskorek\\Documents\\JS\\CodingYear\\0306 Electronic life\\0306 Electronic Life.js"
         }
     ]
 }

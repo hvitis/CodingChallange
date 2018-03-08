@@ -4,7 +4,6 @@ function triple(x) {
     return x * 3
 }
 
-
 // not all languages can do this:
 var triple = function triple(x) {
     return x * 3
