@@ -2,15 +2,15 @@
 
 var plan = [ 
     "############################" ,
-    "#          ##o#            #" ,
+    "#          ## #            #" ,
     "#                          #" ,
-    "#####                     ##" ,
-    "####                     ###" ,
-    "###                     ####" ,
-    "###                      ###" ,
-    "##            o         ####" ,
-    "###       o                #" ,
-    "#  o  #  o              ####" ,
+    "#####        ####         ##" ,
+    "##    ##                 ###" ,
+    "###         o           ####" ,
+    "###     #####            ###" ,
+    "##              #       ####" ,
+    "###                        #" ,
+    "#     #                 ####" ,
     "##                         #" ,
     "############################" ];
 // Grid Programming interface
@@ -18,6 +18,10 @@ function Vector(x, y) {
     this.x = x;
     this.y = y;
 }
+Vector.prototype.plus = function(other) {
+    return new Vector(this.x + other.x, this.y + other.y);
+ };
+ 
 function Grid(width, height) {
     this.space = new Array(width * height);
     this.width = width;
@@ -53,18 +57,16 @@ var directions = {
     "w": new Vector(-1, 0),
     "nw": new Vector(-1, -1)
 };
-console.log(directions)
+
 function randomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
 var directionNames = "n ne e se s sq q nw".split(" ");
-console.log(directionNames)
 
 function BouncingCritter(){
     this.direction = randomElement(directionNames);
 };
 BouncingCritter.prototype.act = function(view) {
-    var self = this
     if (view.look(this.direction) != " ")
         this.direction = view.find(" ") || "s";
     return { type: "move", direction: this.direction };
@@ -122,11 +124,15 @@ var world = new World (plan, {"#": Wall,
 
 World.prototype.turn = function() {
     var acted = [];
+
     this.grid.forEach(function(critter, vector) {
+
         if (critter.act && acted.indexOf(critter) == -1) {
+  
             acted.push(critter);
-            this.letAct(critter, vector)
+            this.letAct(critter, vector);
         }
+
     }, this);
 };
 
@@ -157,8 +163,6 @@ function View(world, vector) {
 }
 
 View.prototype.look = function(dir) {
-    console.log('My result is...');
-    console.log(this);
 
     var target = this.vector.plus(directions[dir]);
     if (this.world.grid.isInside(target))
@@ -178,17 +182,46 @@ View.prototype.find = function(ch) {
     if (found.length == 0) return null;
         return randomElement(found);
 };
+/*
+world.turn()
+console.log(world.toString())
+ */
+//world.turn();
+//console.log(world.toString());
+/*
+function gatherMoves (board) {
+    var clips = [];
+    for (var i = 0; i < 1; i++) {
+        board.turn()
+        clips.push(board.toString())
+    }    
+    return clips
+};
+*/
 
-for(var i = 0; i < 5; i++) {
-    world.turn();
-    console.log(world.toString());
+function gatherMoves (board) {
+
+        board.turn()
+        console.log(board.toString()) 
+
 };
 
+function showBoard(clips) {
+    return console.log(clips[0])
+}
+
+function animate(board) {
+    setInterval(function() {gatherMoves(board)}, 60);
+}
+animate(world)
 
 
-Vector.prototype.plus = function(other) {
-    return new Vector(this.x + other.x, this.y + other.y);
-};
+
+
+
+
+
+
 //____________________________________________________________
 /*
 var grid = [["top left", "top middle", "top right"], ["bottom left", "bottom middle", "bottom right"]]
