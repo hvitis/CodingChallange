@@ -1,19 +1,22 @@
-// ELECTRONIC LIFE PROJECT
-
+/////////////////////////////
+// ELECTRONIC LIFE PROJECT //
+///////////////////////////7/
 var plan = [ 
     "############################" ,
-    "#          ## #            #" ,
     "#                          #" ,
-    "#####        ####         ##" ,
-    "##    ##                 ###" ,
-    "###         o           ####" ,
-    "###     #####            ###" ,
-    "##              #       ####" ,
-    "###                        #" ,
-    "#     #                 ####" ,
+    "#                          #" ,
+    "#                         ##" ,
+    "##                       ###" ,
+    "###         F           ####" ,
+    "###                      ###" ,
+    "##                      ####" ,
+    "###           O            #" ,
+    "#                       ####" ,
     "##                         #" ,
     "############################" ];
+
 // Grid Programming interface
+
 function Vector(x, y) {
     this.x = x;
     this.y = y;
@@ -21,7 +24,15 @@ function Vector(x, y) {
 Vector.prototype.plus = function(other) {
     return new Vector(this.x + other.x, this.y + other.y);
  };
- 
+ /* 
+Or we can use a single array, with size width * height, and decide that
+the element at (x,y) is found at position x + (y * width) in the array.
+
+console.log(grid[2 + (1*3)]) // bottom right
+console.log(grid[0 + (0*3)]) // top left
+console.log(grid[1 + (0*3)]) // top mid
+console.log(grid[2 + (0*3)]) // top right
+*/
 function Grid(width, height) {
     this.space = new Array(width * height);
     this.width = width;
@@ -46,6 +57,7 @@ Grid.prototype.forEach = function(f, context) {
         }
     }
 }
+
 // Critter´s Programming interface
 var directions = {
     "n": new Vector(0, -1),
@@ -57,20 +69,11 @@ var directions = {
     "w": new Vector(-1, 0),
     "nw": new Vector(-1, -1)
 };
-
 function randomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
-var directionNames = "n ne e se s sq q nw".split(" ");
+var directionNames = "n ne e se s sw w nw".split(" ");
 
-function BouncingCritter(){
-    this.direction = randomElement(directionNames);
-};
-BouncingCritter.prototype.act = function(view) {
-    if (view.look(this.direction) != " ")
-        this.direction = view.find(" ") || "s";
-    return { type: "move", direction: this.direction };
-};
 function elementFromChar (legend, ch) {
     if (ch == " ")
         return null;
@@ -78,7 +81,6 @@ function elementFromChar (legend, ch) {
     element.originChar = ch;
     return element;
 }
-
 function World(map, legend) {
     var grid = new Grid(map[0].length, map.length);
     this.grid = grid;
@@ -98,7 +100,6 @@ function charFromElement(element) {
 /*
 Each function call gets
 its own this binding, so the this in the inner function does not refer to
-134
 the newly constructed object that the outer this refers to. In fact, when
 a function isn’t called as a method, this will refer to the global object.
 */
@@ -114,14 +115,60 @@ World.prototype.toString = function () {
     }
     return output
 };
+/*
+The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+*/
+function dirPlus(dir, n) {
+    var index = directionNames.indexOf(dir);
+    //console.log(directionNames[(index + n + 8) % 8])
+    return directionNames[(index + n + 8) % 8]
+}
 
-//console.log(plan)
+
+// WallFollower 
+//
+// ---->
+function WallFollower() {
+    this.dir = "s";
+}
+WallFollower.prototype.act = function(view) {
+    var start = this.dir;
+    if (view.look(dirPlus(this.dir, -3)) != " ")
+    // ?? start = this.dir = ... ?
+        start = this.dir = dirPlus(this.dir, -2);
+    while (view.look(this.dir) != " ") {
+        this.dir = dirPlus(this.dir, 1);
+        if (this.dir == start) break;
+    }
+    return {type: "move", direction: this.dir};
+};
+
+
+// BouncingCritter 
+//
+// ---->
+function BouncingCritter(){
+    this.direction = randomElement(directionNames);
+};
+BouncingCritter.prototype.act = function(view) {
+    if (view.look(this.direction) != " ")
+        this.direction = view.find(" ") || "s";
+    return { type: "move", direction: this.direction };
+};
+
+
 function Wall() {}
-var world = new World (plan, {"#": Wall,
-                              "o": BouncingCritter});
-//console.log(world.toString());
-//_________________________________________________________________
 
+
+
+// WORLD
+//
+//
+
+var world = new World (plan, {"#": Wall,
+                              "O": BouncingCritter,
+                              "F": WallFollower
+                            });
 World.prototype.turn = function() {
     var acted = [];
 
@@ -135,7 +182,6 @@ World.prototype.turn = function() {
 
     }, this);
 };
-
 World.prototype.letAct = function(critter, vector) {
     var action = critter.act(new View(this, vector));
     if (action && action.type == "move") {
@@ -146,7 +192,6 @@ World.prototype.letAct = function(critter, vector) {
         }
     }
 };
-
 World.prototype.checkDestination = function(action, vector) {
     if (directions.hasOwnProperty(action.direction)) {
         var dest = vector.plus(directions[action.direction]);
@@ -154,16 +199,11 @@ World.prototype.checkDestination = function(action, vector) {
             return dest;
     }
 };
-
 function View(world, vector) {
-
     this.world = world;
     this.vector = vector;
-    
 }
-
 View.prototype.look = function(dir) {
-
     var target = this.vector.plus(directions[dir]);
     if (this.world.grid.isInside(target))
         return charFromElement(this.world.grid.get(target));
@@ -182,64 +222,15 @@ View.prototype.find = function(ch) {
     if (found.length == 0) return null;
         return randomElement(found);
 };
-/*
-world.turn()
-console.log(world.toString())
- */
-//world.turn();
-//console.log(world.toString());
-/*
 function gatherMoves (board) {
-    var clips = [];
-    for (var i = 0; i < 1; i++) {
-        board.turn()
-        clips.push(board.toString())
-    }    
-    return clips
-};
-*/
-
-function gatherMoves (board) {
-
         board.turn()
         console.log(board.toString()) 
-
 };
-
 function showBoard(clips) {
     return console.log(clips[0])
 }
-
 function animate(board) {
-    setInterval(function() {gatherMoves(board)}, 60);
+    setInterval(function() {gatherMoves(board)}, 200);
 }
 animate(world)
 
-
-
-
-
-
-
-
-//____________________________________________________________
-/*
-var grid = [["top left", "top middle", "top right"], ["bottom left", "bottom middle", "bottom right"]]
-console.log(grid[1][1]);
-var grid = ["top left", "top middle", "top right", "bottom left", "bottom middle", "bottom right"]
-/* 
-Or we can use a single array, with size width * height, and decide that
-the element at (x,y) is found at position x + (y * width) in the array.
-
-console.log(grid[2 + (1*3)]) // bottom right
-console.log(grid[0 + (0*3)]) // top left
-console.log(grid[1 + (0*3)]) // top mid
-console.log(grid[2 + (0*3)]) // top right
-*/
-
-
-//var grid = new Grid(5,5);
-//console.log(grid.get(new Vector(1, 1))); // because grid Get needs 2 parameters to be passed, vector and value
-// that´s why we need to sset up the grid first
-//grid.set(new Vector(1, 1), "#");
-//console.log(grid.get(new Vector(1 , 1)));
