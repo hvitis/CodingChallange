@@ -229,8 +229,8 @@ function gatherMoves (board) {
 function showBoard(clips) {
     return console.log(clips[0])
 }
-function animate(board) {
-    setInterval(function() {gatherMoves(board)}, 200);
+function animate() {
+    setInterval(function() {gatherMoves(world)}, 200);
 }
-animate(world)
+animate()
 

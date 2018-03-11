@@ -74,3 +74,10 @@ describe what is part of an object’s interface. Sometimes it can help
 to use a naming scheme to distinguish between external and internal
 properties, for example by prefixing all internal ones with an underscore
 character (_).
+18. Why did we wrap the namespace function in a pair of parentheses?
+This has to do with a quirk in JavaScript’s syntax. If an expression
+starts with the keyword function, it is a function expression. However,
+if a statement starts with function, it is a function declaration, which
+requires a name and, not being an expression, cannot be called by writing
+parentheses after it. You can think of the extra wrapping parentheses as
+a trick to force the function to be interpreted as an expression.

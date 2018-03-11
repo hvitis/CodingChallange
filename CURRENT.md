@@ -11,5 +11,18 @@ TypeError: that.vector.plus is not a function
     at World.letAct (C:\Users\adam.piskorek\Documents\JS\CodingYear\0306 Electronic life\0306 Electronic Life.js:133:26)
     at World.<anonymous> (C:\Users\adam.piskorek\Documents\JS\CodingYear\0306 Electronic life\0306 Electronic Life.js:127:18)
 
-__________________
 The problem lies in the initiation of the grid of the World object, not in "this."~~
+
+__________________
+
+Conclusion
+JavaScript is easy.
+Not easy as sleeping, but easy as climbing the Mount Everest for the second time. That means that it is complex, not complicated.
+You must train every day and plan each of your steps.
+If that is fulfilled then everything goes smooth.
+Which brings us to the beginning of this article…
+
+Do not take things for granted
+Be curious
+Never give up
+Reinvent yourself
