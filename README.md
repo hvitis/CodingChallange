@@ -81,3 +81,7 @@ if a statement starts with function, it is a function declaration, which
 requires a name and, not being an expression, cannot be called by writing
 parentheses after it. You can think of the extra wrapping parentheses as
 a trick to force the function to be interpreted as an expression.
+19. A typical tree has different kinds of nodes. The syntax tree for the
+Egg language had variables, values, and application nodes. Application
+nodes always have children
+20. 
