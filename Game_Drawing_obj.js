@@ -40,7 +40,6 @@ DOMDisplay.prototype.drawActors = function() {
     return wrap;
 };
 
-
 DOMDisplay.prototype.drawFrame = function() {
     if (this.actorLayer)
     this.wrap.removeChild(this.actorLayer);
@@ -48,7 +47,6 @@ DOMDisplay.prototype.drawFrame = function() {
     this.wrap.className = "game " + (this.level.status || "");
     this.scrollPlayerIntoView();
 };
-
 
 DOMDisplay.prototype.scrollPlayerIntoView = function () {
     var width = this.wrap.clientWidth;
