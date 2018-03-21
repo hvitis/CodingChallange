@@ -1,0 +1,9 @@
+h1 {
+  color: purple;
+}
+
+button {
+  border: 2px solid #34495e;
+  background-color: #3498db;
+  color: white;
+}
