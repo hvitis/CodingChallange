@@ -85,3 +85,5 @@ a trick to force the function to be interpreted as an expression.
 Egg language had variables, values, and application nodes. Application
 nodes always have children
 20. 
+<div> is grouping content in a block
+<span> is grouping content in line

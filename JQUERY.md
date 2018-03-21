@@ -41,4 +41,36 @@ too broad.
 Also, jQuery has many available plug-ins and libraries that provide a rich user
 interface or other functionality. For example:
 • jQuery UI (http://jqueryui.com/)
-• jQuery Mobile (http://jquerymobile.com/)s
+• jQuery Mobile (http://jquerymobile.com/)
+
+
+ Basic syntax is: $(selector).action()
+- A $ sign to define/access jQuery
+ - A (selector) to "query (or find)" HTML elements
+  - A jQuery action() to be performed on the element(s)
+
+
+$("p").hide() - hides all <p> elements.
+
+$(".test").hide() - hides all elements with class="test".
+    
+$("#test").hide() - hides the element with id="test".
+
+$(document).ready(function(){
+
+    // jQuery methods go here...
+ 
+ });
+
+$("*")	Selects all elements
+$(this)	Selects the current HTML element
+$("p.intro")	Selects all <p> elements with class="intro"
+$("p:first")	Selects the first <p> element
+$("ul li:first")	Selects the first <li> element of the first <ul>
+$("ul li:first-child")	Selects the first <li> element of every <ul>
+$("[href]")	Selects all elements with an href attribute
+$("tr:even")	Selects all even <tr> elements
+$("tr:odd")	Selects all odd <tr> elements
+$(":checked")
+$(":selected")
+$(":image")
