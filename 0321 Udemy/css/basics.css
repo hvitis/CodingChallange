@@ -1,0 +1,14 @@
+selector {
+    property: value;
+}
+
+/* Make all h1 purple and font-size 56 */
+h1 {
+    color:purple;
+    font-size: 56px;
+}
+
+img {
+    border: red;
+    border-width: 2px; 
+}
