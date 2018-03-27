@@ -1,0 +1,22 @@
+/* Selector {
+property: value;
+}
+*/
+h1 {
+font-size: 40px;
+font-weight: 400;
+background-color: coral;
+border: black;
+border-width: 30px;
+border: solid;
+}
+p {
+    border: 2px purple solid;
+}
+#important {
+    color: violet;
+}
+.crazy {
+    color: turquoise;
+    background: crimson;
+}
