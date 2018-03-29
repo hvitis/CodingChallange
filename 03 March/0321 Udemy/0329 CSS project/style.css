@@ -1,0 +1,21 @@
+table {
+    margin: auto;
+}
+td {
+   width: 100px;
+   height: 100px;
+}
+.mid {
+    border-left: solid 2px black;
+    border-right: solid 2px black;
+}
+.mid-hor {
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+h1 {
+    text-align: center;
+    font-family: Impact;
+}
+
+
