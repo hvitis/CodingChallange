@@ -1,0 +1,15 @@
+h1 {
+    margin: 1%;
+    text-align: left;
+    font-family: Impact;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 30px;
+    text-transform: uppercase;
+    border-bottom: solid gray 1px;
+}
+img {
+    width: 30%;
+    height: 300px;
+    float: left;
+    margin: 1%;
+}
