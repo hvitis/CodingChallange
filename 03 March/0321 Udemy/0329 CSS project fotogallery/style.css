@@ -5,11 +5,12 @@ h1 {
     font-family: 'Shadows Into Light', cursive;
     font-size: 30px;
     text-transform: uppercase;
-    border-bottom: solid gray 1px;
+    border-bottom: solid black 2px;
 }
 img {
     width: 30%;
     height: 300px;
     float: left;
     margin: 1%;
+    -webkit-filter: grayscale(100%);
 }

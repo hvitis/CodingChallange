@@ -1,0 +1,25 @@
+body {
+    border: 20px #bdc3c7 solid;
+    padding: 20px;
+    max-width: 600px;
+    width: auto;
+    margin: 20px auto;
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+
+.quote {
+    border-left: #bdc3c7 solid 5px;
+    padding-left: 10px;
+}
+
+.date {
+    color: skyblue;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-family: 'VT323', monospace;
+}
+.post {
+    border-block-end: #bdc3c7 solid 2px;
+    margin-block-end: 15px;
+}
+
