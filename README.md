@@ -84,8 +84,5 @@ a trick to force the function to be interpreted as an expression.
 19. A typical tree has different kinds of nodes. The syntax tree for the
 Egg language had variables, values, and application nodes. Application
 nodes always have children
-20. 
-div> is grouping content in a block
-span> is grouping content in line
-21.
- CSS allows complete and total control over the style of a hypertext document. The only way this can be illustrated in a way that gets people excited is by demonstrating what it can truly be, once the reins are placed in the hands of those able to create beauty from structure. http://www.csszengarden.com/
+20. div> is grouping content in a block span> is grouping content in line
+21. CSS allows complete and total control over the style of a hypertext document. The only way this can be illustrated in a way that gets people excited is by demonstrating what it can truly be, once the reins are placed in the hands of those able to create beauty from structure. http://www.csszengarden.com/

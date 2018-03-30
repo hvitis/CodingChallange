@@ -18,8 +18,13 @@ body {
     letter-spacing: 0.2rem;
     font-family: 'VT323', monospace;
 }
+
 .post {
     border-block-end: #bdc3c7 solid 2px;
     margin-block-end: 15px;
 }
 
+h2 {
+    font-family: 'Monoton', cursive;
+    font-size: 40px;
+}
