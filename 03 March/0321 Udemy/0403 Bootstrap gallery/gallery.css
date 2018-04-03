@@ -1,0 +1,17 @@
+body {
+    padding-top: 70px;
+
+}
+
+.jumbotron {
+    color: red;
+
+}
+
+.navbar-inverse {
+    background: chocolate;
+}
+
+.navbar-inverse .navbar-nav {
+    color: white;
+}
