@@ -30,4 +30,4 @@ Reinvent yourself
 //Watching JS on Udemy
 //Watching JS on Udemy
 //Watching JS project on Udemy
-//Watching JS project on Udemy
+//Watching tutorials on atributes, selectors, manipulating them.
