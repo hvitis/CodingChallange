@@ -8,3 +8,4 @@
 >Answer 0309 Listing objects properties.js
 5. Why when I console.log the function that returns I get undefined in the terminal
 6. How to set pictures in fotogallery projects to resize them but to keep the proportion and float left.
+7. How to implement script in the browser and how to import JS to html code.

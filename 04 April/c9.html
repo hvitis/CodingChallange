@@ -1,0 +1,26 @@
+<!--
+
+    Why cant I fetch the JS file. How is it done?
+
+-->
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <title>Chat Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+  <script type="text/javascript" src="js/faker/index.js"></script>
+  <script>
+      var randomName = faker.name.findName(); // Caitlyn Kerluke
+      //var randomEmail = faker.internet.email(); // Rusty@arne.info
+      //var randomCard = faker.helpers.createCard(); // random contact card containing many properties
+      document.getElementById("output").innerHTML = randomName;
+  </script>
+  </head>
+  <body>
+    <h1 id="output"></h1>
+    <h2>Czesc Gordonku</h2>
+    
+  </body>
+</html>
