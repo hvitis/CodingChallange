@@ -26,3 +26,5 @@ Do not take things for granted
 Be curious
 Never give up
 Reinvent yourself
+.
+m
