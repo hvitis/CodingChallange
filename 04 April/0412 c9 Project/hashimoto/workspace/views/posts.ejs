@@ -1,0 +1,11 @@
+<% include partials/header %>
+<h1>Posts</h1>
+
+<% for (var i = 0; i < posts.length; i++) { %>
+<li> <%= posts[i].title %></li>
+<% } %>
+<p>=========</p>
+<% posts.forEach(function(post) { %>
+<li> <%= post.title %></li>
+<% }) %>
+<% include partials/footer %>
