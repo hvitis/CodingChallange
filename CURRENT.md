@@ -26,5 +26,6 @@ Do not take things for granted
 Be curious
 Never give up
 Reinvent yourself
-.
-m
+
+
+Watching asyncronous tutorials, reading book about fuulstack
