@@ -88,3 +88,5 @@ https://www.youtube.com/watch?v=bCqtb-Z5YGQ
 21. CSS allows complete and total control over the style of a hypertext document. The only way this can be illustrated in a way that gets people excited is by demonstrating what it can truly be, once the reins are placed in the hands of those able to create beauty from structure. http://www.csszengarden.com/
 22. Note: The callback function is not run unless called by its containing function, it is called back. Hence, the term call back function
 23. I promise to do this whenever that is true. If it isn't true, then I won't.
+24. Another important thing to notice is that even though we are doing two different asynchronous requests we only have one .catch() where we handle our errors. That’s because any error that occurs in the Promise chain will stop further execution and an error will end up in the next .catch() in the chain.
+25.
