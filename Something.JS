@@ -1,4 +1,4 @@
-Ionic, cordoba, hardware: ??
+// Ionic, cordoba, hardware: ??
 
 ["10","10","10","10","10"].map(parseInt);
 
@@ -7,10 +7,10 @@ Ionic, cordoba, hardware: ??
 "" == 0;
 "" === 0;
 
-innobus, retira, butaquin ciclope QT C++
+// innobus, retira, butaquin ciclope QT C++
 
-hexiot geliot hermes,
+// hexiot geliot hermes,
 
-blender, C++, OGRE3D Festival
+// blender, C++, OGRE3D Festival
 
 // cssconf.eu
