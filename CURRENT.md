@@ -29,3 +29,4 @@ Reinvent yourself
 
 
 Watching asyncronous tutorials, reading book about fuulstack
+Watching React course on Udemy.
