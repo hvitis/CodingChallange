@@ -11,7 +11,7 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')))
 
 
 //  app.use(express.static('index.html"))
-app.get('/', function(req, res) {
+app.get('/game', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
