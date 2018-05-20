@@ -89,7 +89,4 @@ https://www.youtube.com/watch?v=bCqtb-Z5YGQ
 22. Note: The callback function is not run unless called by its containing function, it is called back. Hence, the term call back function
 23. I promise to do this whenever that is true. If it isn't true, then I won't.
 24. Another important thing to notice is that even though we are doing two different asynchronous requests we only have one .catch() where we handle our errors. That’s because any error that occurs in the Promise chain will stop further execution and an error will end up in the next .catch() in the chain.
-<<<<<<< HEAD
-=======
 25. //Setting up repo on Ubuntu
->>>>>>> 727b1c5dc4cc5b20534c8cf9b6392ed64c1368d8
