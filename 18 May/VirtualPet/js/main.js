@@ -17,6 +17,9 @@ var GameState = {
     },
     create: function() {
        this.background = this.game.add.sprite(0,0, "dom");
+       this.background.inputEnabled = true;
+       this.background.events.onInputDown.add(this.placeItem, this);
+
 
         // Load moomins
        this.muminek = this.game.add.sprite(100,400, "muminek")
@@ -27,7 +30,7 @@ var GameState = {
         // Draggable pet
         this.muminek.inputEnabled = true;
         this.muminek.input.enableDrag(); 
-        this.muminek.events.onInputDown.add(this.rotateIt, this);
+        //this.muminek.events.onInputDown.add(this.rotateIt, this);
 
         // Load acid
        this.acid = this.game.add.sprite(100,150, "acid")
@@ -55,15 +58,63 @@ var GameState = {
         // NotDraggable Rotate
         this.rotate = this.game.add.sprite(20, 490, "rotate");
         this.rotate.inputEnabled = true;
+        //this.rotate.events.onInputDown.add(this.rotateIt, this);
         this.rotate.events.onInputDown.add(this.rotateIt, this);
 
+
+        this.buttons = [this.fruit, this.rotate, this.icecream, this.acid]
+    
+        this.selectedItem = null;
+        this.uiBlocked = false;
     },
     pickItem: function (sprite, event) {
-        console.log("Pick me")
+        
+        if(!this.uiBlocked) {
+            console.log("Pick me")
+
+            this.clearSelection();
+
+            sprite.alpha = 0.4;
+
+            this.selectedItem = sprite;
+        }
     },
     rotateIt: function (sprite, event) {
-        console.log("Weeeeeeeeee")
+        if(!this.uiBlocked) {
+            console.log("Weeeeeeeeee")
+            this.uiBlocked = true;
+            this.clearSelection();
+            //sprite.alpha = 0.4;
+
+            var petRotation = this.game.add.tween(this.muminek)
+            petRotation.to({angle: "+720"}, 1000);
+            
+            petRotation.onComplete.add(function() {
+                this.uiBlocked = false;
+                sprite.alpha = 1;
+                this.muminek.customParams.fun += 10;
+                console.log(this.muminek.customParams.fun)
+            }, this)
+            
+            petRotation.start();
+
+        }
+        
     },
+    clearSelection: function() {
+        this.buttons.forEach(function(element, index) {
+            element.alpha = 1;
+        });
+        this.selectedItem = null;
+    },
+    placeItem: function(sprite, event) {
+        var x = event.position.x;
+        var y = event.position.y;
+
+        var newItem = this.game.add.sprite(x, y, this.selectedItem.key);
+        newItem.anchor.setTo(0.5);
+        newItem.customParams = this.selectedItem.customParams;
+    }
 
 
 }
