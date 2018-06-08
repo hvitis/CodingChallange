@@ -33,4 +33,6 @@ Watching React course on Udemy.
 Learning Phaser on yt tutorials on the way to/from work.
 ES6 yt movies
 Promises with Daniel Shiffman
+
+//React on locale
 //React on locale
