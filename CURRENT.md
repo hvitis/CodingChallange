@@ -34,7 +34,4 @@ Learning Phaser on yt tutorials on the way to/from work.
 ES6 yt movies
 Promises with Daniel Shiffman
 
-//React on locale
-//React on locale
-// watching programming movies on yt
-// watching programming movies on yt
+// Comming back after Hashimoto break/up
