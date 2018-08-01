@@ -2,6 +2,10 @@
 
 My 12 months coding challange
 Starting on 15th of February 2018
+// 1st August edit:
+// During past month I didn't have consistency due to various reasons.
+// I missed 34 days of uploads which postpones my 12 months challange.
+// Planned deadline - 20 of March 2019.
 
 # Resolutions
 
